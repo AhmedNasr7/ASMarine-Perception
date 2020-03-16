@@ -1,0 +1,5 @@
+classes= 2
+train  = /content/robosub_transdec_dataset/data/train.txt  
+valid  = /content/robosub_transdec_dataset/data/test.txt
+names = /content/robosub.names  
+backup = /content/weights/
