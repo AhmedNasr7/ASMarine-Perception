@@ -54,13 +54,7 @@ for line in content:
 #    height=str(abs(xmin-xmax)/img_w);           ## wrong one , but we trained on it
     width=str(abs(xmax-xmin)/img_w);           ## correct one , but we haven't trained on it
     height=str(abs(ymax-ymin)/img_h);          ## correct one , but we haven't trained on it
-    if img_name=='1014g1.jpg':
-        print(img_w,img_h)
-        print(xmin,ymin,xmax,ymax)
-        print(xmin/img_w,ymin/img_h,xmax/img_w,ymax/img_h)
-        print(x,y,width,height)
-        print('='*75)
-
+    
 
     new_file=open(direc+name,'a')
     new_file.write(classNum+' '+x+' '+y+' '+width+' '+height+'\n')

@@ -1,14 +1,32 @@
 import os
 
-prefix = 'blablabla'  
-suffix = 'gugugugugu'  
+
+prefix = '/content/data/images/' ######### images folder address + insert 'train_' before images  
 dest = ''  
 lines = ''
-with open(os.getcwd()+'/file.txt', 'r') as src:
+path = os.path.dirname(__file__)
+print(path)
+
+with open(path+'/train_set.txt', 'r') as src:
     lines = src.read()
 lines = lines.split('\n')
-lines = lines[:-1]
+lines = [line.split(' ')[0] for line in lines]
 
-with open(os.getcwd()+'/file.txt', 'w') as dest:  
-    for line in lines:  
-        dest.write('%s %s\n' % (prefix, line.rstrip('\n')))
+with open(path+'/train_set.txt', 'w') as dest:  
+    for line in lines[:-1]:  
+        if(line==''):
+            continue
+        dest.write('%s%s\n' % (prefix, line.rstrip('\n')))
+
+with open(path+'/test_set.txt', 'r') as src:
+    lines = src.read()
+lines = lines.split('\n')
+lines = [line.split(' ')[0] for line in lines]
+
+with open(path+'/test_set.txt', 'w') as dest:  
+    for line in lines[:-1]:
+        if(line==''):
+            continue  
+        dest.write('%s%s\n' % (prefix, line.rstrip('\n')))
+
+
