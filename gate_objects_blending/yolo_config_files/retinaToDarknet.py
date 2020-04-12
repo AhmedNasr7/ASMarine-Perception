@@ -60,3 +60,4 @@ for line in content:
     new_file.write(classNum+' '+x+' '+y+' '+width+' '+height+'\n')
     new_file.flush();
     new_file.close();
+

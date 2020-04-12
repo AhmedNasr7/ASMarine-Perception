@@ -1,7 +1,8 @@
 import os
 
 
-prefix = '/content/data/images/' ######### images folder address + insert 'train_' before images  
+train_prefix = '/content/data/train_images/' ######### images folder address + insert 'train_' before images  
+test_prefix = '/content/data/test_images/' ######### images folder address + insert 'train_' before images  
 dest = ''  
 lines = ''
 path = os.path.dirname(__file__)
@@ -16,7 +17,7 @@ with open(path+'/train_set.txt', 'w') as dest:
     for line in lines[:-1]:  
         if(line==''):
             continue
-        dest.write('%s%s\n' % (prefix, line.rstrip('\n')))
+        dest.write('%s%s\n' % (train_prefix, line.rstrip('\n')))
 
 with open(path+'/test_set.txt', 'r') as src:
     lines = src.read()
@@ -27,6 +28,6 @@ with open(path+'/test_set.txt', 'w') as dest:
     for line in lines[:-1]:
         if(line==''):
             continue  
-        dest.write('%s%s\n' % (prefix, line.rstrip('\n')))
+        dest.write('%s%s\n' % (test_prefix, line.rstrip('\n')))
 
 

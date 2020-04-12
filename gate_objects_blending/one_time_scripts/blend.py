@@ -137,8 +137,22 @@ def load_images_and_labels():
 #            break
     cv2.destroyAllWindows()
 
+
+def custom_blend(backbone,external,img_name,alpha=0.4):
+    external = cv2.resize(external,(400,300))
+    roi_img = backbone[50:350,50:450,:]
+    roi_img = cv2.addWeighted(external,0.2,roi_img,0.8,0)
+    
+    backbone[50:350,50:450,:] = roi_img
+    cv2.imwrite(img_name+'.png',backbone)
+    
+
 if __name__ == "__main__":
-    load_images_and_labels()
+#    load_images_and_labels()
+    imgs = glob.glob('/home/abdelrahman/Desktop/poll_images/*.png')
+    for img in imgs:
+        custom_blend(cv2.imread('/home/abdelrahman/college/datasets/robosub_transdec_dataset/images/542.jpg'),\
+            cv2.imread(img),img.split('.')[0])
 
 
 
