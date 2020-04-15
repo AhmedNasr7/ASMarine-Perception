@@ -29,12 +29,14 @@ cp_image = np.copy(new_image)
 
 hsv = cv2.cvtColor(cp_image, cv2.COLOR_BGR2HSV)
 
-orange_low = np.array([5, 50, 50])
-orange_high = np.array([40, 255, 255])
+orange_low = np.array([6, 65, 50])
+orange_high = np.array([30, 255, 255])
 
 o_mask = cv2.inRange(hsv, orange_low, orange_high)
 
 cp_image[o_mask == 0] = [0, 0, 0]
+
+#img2 = cv2.bitwise_not(cp_image)
 
 gray = cv2.cvtColor(cp_image, cv2.COLOR_BGR2GRAY)
 
