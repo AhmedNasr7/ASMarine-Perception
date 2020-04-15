@@ -29,7 +29,7 @@ cp_image = np.copy(new_image)
 
 hsv = cv2.cvtColor(cp_image, cv2.COLOR_BGR2HSV)
 
-orange_low = np.array([6, 65, 50])
+orange_low = np.array([4, 65, 50])
 orange_high = np.array([30, 255, 255])
 
 o_mask = cv2.inRange(hsv, orange_low, orange_high)
