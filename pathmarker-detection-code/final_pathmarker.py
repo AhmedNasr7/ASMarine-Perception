@@ -40,7 +40,7 @@ cp_image[o_mask == 0] = [0, 0, 0]
 
 gray = cv2.cvtColor(cp_image, cv2.COLOR_BGR2GRAY)
 
-ret, thresh = cv2.threshold(gray, 155, 255, cv2.THRESH_BINARY)
+ret, thresh = cv2.threshold(gray, 145, 255, cv2.THRESH_BINARY)
 
 contours, _hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 print(len(contours))
