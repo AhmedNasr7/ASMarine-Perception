@@ -1,12 +1,16 @@
+import sys
+sys.path.remove(sys.path[1])
+
 import cv2
 import math
 import numpy as np
 import time
+import os
 
 
 
-
-img_name = './pmarker2.jpg'
+img_name = 'images/pmarker2-f.jpg'
+img_name = '/'.join(os.path.abspath(__file__).split('/')[:-1])+'/'+img_name
 
 
 t0 = time.time()
