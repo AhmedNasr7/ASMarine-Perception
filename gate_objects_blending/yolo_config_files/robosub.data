@@ -1,4 +1,4 @@
-classes = 11
+classes = 14
 train  = /content/data/train_set.txt  
 valid  = /content/data/test_set.txt
 names = /content/pytorch_custom_yolo_training/config/robosub.names  
