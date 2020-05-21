@@ -47,7 +47,7 @@ class Detector:
         self.agnostic_nms = True
 
         # Get names and colors
-        self.names = '/content/robosub.names'
+        self.names = './cfg/robosub.names'
         self.names = load_classes(self.names)
         self.colors = [[random.randint(0, 255) for _ in range(3)] for _ in range(len(self.names))]
         self.classes = self.opt.classes
@@ -135,8 +135,8 @@ class Detector:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--classes', nargs='+', type=int, help='filter by class')
-    source_img = '/content/1.jpg'
-    cfg = '/content/yolov3-spp.cfg'
+    source_img = './1.jpg'
+    cfg = './cfg/yolov3-spp.cfg'
     weights = './best-AUV-gate.weights'
     opt = parser.parse_args()
     detector = Detector(opt, source_img, cfg, weights, save_img=True)
