@@ -1047,8 +1047,8 @@ def plot_results(start=0, stop=0, bucket='', id=()):  # from utils.utils import 
             
     ax[10].plot(x, sum, marker='.', label="Loss Sum")
     ax[10].set_title("Loss Sum")
-    ax[11].plot(x, Avg, marker='.', label="Loss Avergae")
-    ax[11].set_title("Loss Avergae")            
+    ax[11].plot(x, Avg, marker='.', label="Loss Average")
+    ax[11].set_title("Loss Average")            
     fig.tight_layout()
     ax[1].legend()
     fig.savefig('results.png', dpi=200)
